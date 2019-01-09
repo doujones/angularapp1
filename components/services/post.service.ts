@@ -35,7 +35,7 @@ export class PostService {
   }
 
   removePost(post: Post | number): Observable<Post> {
-    const id = typeof post === 'number' ? post : post.id;
+    const id = typeof post === 'number' ? post : post.customerid;
     const url = `${this.postsUrl}/${id}`;
 
     return this.http.delete<Post>(url, httpOptions);
